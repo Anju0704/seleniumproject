@@ -6,11 +6,15 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constant.Constant;
+import pages.Homepage;
 import pages.Loginpage;
 import pages.Managenewsnew;
 import utilities.ExcelUtilities;
 
 public class ManagenewsTest extends Base{
+	Homepage home;
+	Managenewsnew manage;
   @Test(retryAnalyzer = retry.Retry.class)
   public void verifyuserisabletonewmanagenews() throws IOException {
 	  String username=ExcelUtilities.getStringName(1, 0, "loginpage");
@@ -18,15 +22,14 @@ public class ManagenewsTest extends Base{
 	  Loginpage login=new Loginpage(driver);
   	  login.enterUsernameField("admin");
   	  login.enterpasswordField("admin");
-  	  login.clickSigninButton();
+  	home=login.clickSigninButton();
   	 String newsfield=ExcelUtilities.getStringName(1, 0, "managenews");
-	  
-  	Managenewsnew manage=new Managenewsnew(driver);
-  	manage.clickmanagenewsbutton();
+  	 manage=home.clickmanagenewsbutton();
   	manage.clicknewbutton();
   	manage.enternewsField(newsfield);
   	manage.clicksavebutton();
+  	
   	boolean isAlertloaded=manage.isAlertload();
-  	assertTrue(isAlertloaded,"not displayed alert");
+  	assertTrue(isAlertloaded,Constant.ERRORMSG4);
   }
 }

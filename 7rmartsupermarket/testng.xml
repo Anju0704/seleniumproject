@@ -6,18 +6,11 @@
 	<parameter name="username" value="admin"></parameter>
 	<parameter name="password" value="admin"></parameter>
     <classes>
-      
-     
-		
-		 
-		<class name="testscript.SearchSubcategoryTest">
+      <class name="testscript.SearchSubcategoryTest">
 			<methods>
 				<include name="verifyuserisabletosearchsubcategory"></include>
-				
 				</methods>
 		</class>
-      
-      
-    </classes>
+ </classes>
   </test> <!-- TestNGSample -->
 </suite> <!-- Suite -->

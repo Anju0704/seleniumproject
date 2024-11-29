@@ -15,14 +15,29 @@ public class Homepage {
 	@FindBy(xpath="//img[@class='img-circle']")WebElement admin;
 	@FindBy(xpath="//i[@class='ace-icon fa fa-power-off']")WebElement logout;
 	@FindBy(xpath="/html/body/div/div[1]/section/div/div/div[1]/div/a")WebElement adminuser;
+	@FindBy(xpath="/html/body/div/div[1]/section/div/div/div[9]/div/a")WebElement managenews;
+	@FindBy(xpath="/html/body/div/div[1]/section/div/div/div[8]/div/a")WebElement manageproductbutton;
+	@FindBy(xpath="/html/body/div/div[1]/section/div/div/div[4]/div/a")WebElement subcategorybutton;
 	public AdminUserPage adminuserclick() {
 		adminuser.click();
 		return new AdminUserPage(driver);
+	}
+	public Managenewsnew clickmanagenewsbutton() {
+		managenews.click();
+		return new Managenewsnew(driver);
 	}
 	public void clickAdminButton()
 	{
 		admin.click();
 		
+	}
+	public Manageproductnew clickmanageproductbutton() {
+		manageproductbutton.click();
+		return new Manageproductnew(driver);
+	}
+	public Subcategorynew clicksubcategorybutton() {
+		subcategorybutton.click();
+		return new Subcategorynew(driver);
 	}
 	public void clickLogoutButton() {
 		logout.click();

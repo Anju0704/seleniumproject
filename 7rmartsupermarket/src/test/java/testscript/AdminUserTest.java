@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.AdminUserPage;
 import pages.Homepage;
 import pages.Loginpage;
@@ -32,16 +33,9 @@ public class AdminUserTest extends Base {
 	  admin.passwordField(password1);
 	  admin.clickusertypebutton();
 	  admin.clicksavebutton();
-	  /*AdminUserPage admin=new AdminUserPage(driver);
-	  admin.clickadminuserbutton();
-	  admin.clicknewbutton();
-	  admin.enterusernamefield(username1);
-	  admin.enterpasswordfield(password1);
-	  admin.clickusertypebutton();
-	  admin.clicksavebutton();*/
 	  
 	  boolean isAlertloaded=admin.isAlertloaded();
-	  assertTrue(isAlertloaded,"User not created successfully");
+	  assertTrue(isAlertloaded,Constant.ERRORMSG3);
 			  
 	  
   }

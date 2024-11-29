@@ -20,10 +20,7 @@ public class HomepageTest extends Base{
 	  home.clickAdminButton();
 	  home.clickLogoutButton();
 	  
-	/*  login.clickSigninButton();
-	  Homepage home=new Homepage(driver);
-	  home.clickAdminButton();
-	  home.clickLogoutButton();*/
+	
 	  assertEquals(driver.getTitle(),"Login | 7rmart supermarket","Logout failed");
 	  
 	 

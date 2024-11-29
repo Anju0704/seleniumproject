@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.AdminUserPage;
 import pages.Adminusersearch;
 import pages.Homepage;
@@ -17,18 +18,15 @@ public class ResetadminuserTest extends Base{
 	ResetAdminUser reset;
 	@Test
   public void verifyuserisabletoreset() {
-	/*  Loginpage login=new Loginpage(driver);
-  	  login.enterUsernameField("admin");
-  	  login.enterpasswordField("admin");
-  home=login.clickSigninButton();*/
-  //	AdminUserPage admin=new AdminUserPage(driver);
+	
   	 admin=home.adminuserclick();
 	  admin.clicknewbutton();
 	  admin.usernameField("achu");
-	  //ResetAdminUser reset=new ResetAdminUser(driver);
-	  reset.clickreset();
+	 reset.clickreset();
+	 
+	 
 	  boolean isResetloaded=reset.isResetloaded();
-	  assertTrue(isResetloaded,"no result found");
+	  assertTrue(isResetloaded,Constant.ERRORMSG4);
 	  
   }
   

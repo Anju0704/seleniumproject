@@ -25,66 +25,75 @@ public class Manageproductnew {
 	@FindBy(xpath="//input[@id='w_price']")WebElement price;
 	@FindBy(xpath="//input[@name='w_stock']")WebElement stockavailability;
 	@FindBy(xpath="//button[@type='submit']")WebElement save;
-	public void clickmanageproductbutton() {
+	@FindBy(xpath="//i[@class='icon fas fa-check']")WebElement alert;
+	public Manageproductnew clickmanageproductbutton() {
 		manageproductbutton.click();
+		return this;
 	}
-	public void clicknewbutton()
+	public Manageproductnew clicknewbutton()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void clicktitlebutton(String titlefield)
+	public Manageproductnew clicktitlebutton(String titlefield)
 	{
 		title.sendKeys(titlefield);
+		return this;
 	}
-	public void clickproducttype()
+	public Manageproductnew clickproducttype()
 	{
 	  producttype.click();
 	  producttype.isSelected();
+	return this;
 	}
 	
-	public void clickcategorybutton() {
+	public Manageproductnew clickcategorybutton() {
 		category.click();
 		Select select=new Select(category);
 		  select.selectByVisibleText("Select");
+		return this;
 	}
-	public void clicksubcategory() {
+	public Manageproductnew clicksubcategory() {
 		subcategory.click();
 		Select select=new Select(subcategory);
 		  select.selectByVisibleText("Select");
+		return this;
 	}
-	public void clickpricetype()
+	public Manageproductnew clickpricetype()
 	{
 	  pricetype.click();
 	  pricetype.isSelected();
+	return this;
 	}
-	public void enterweightvalue(String weightvaluefield) {
+	public Manageproductnew enterweightvalue(String weightvaluefield) {
 		weightvalue.sendKeys(weightvaluefield);
+		return this;
 	}
-	public void enterweightunit(String weightunitfield) {
+	public Manageproductnew enterweightunit(String weightunitfield) {
 		weightunit.sendKeys(weightunitfield);
+		return this;
 	}
-	public void entermaxquantity(String maxquantityfield) {
+	public Manageproductnew entermaxquantity(String maxquantityfield) {
 		maxquantity.sendKeys(maxquantityfield);
+		return this;
 	}
-	public void enterprice(String pricefield) {
+	public Manageproductnew enterprice(String pricefield) {
 		price.sendKeys(pricefield);
+		return this;
 	}
-	public void enterstockavailability(String stockavailabilityfield) {
+	public Manageproductnew enterstockavailability(String stockavailabilityfield) {
 		stockavailability.sendKeys(stockavailabilityfield);
+		return this;
 	}
 	
-	
-	//public void clickimagebutton() {
-		//image.click();
-	//}
-	
-	public void clicksavebutton()
+	public Manageproductnew clicksavebutton()
 	{
 		save.click();
+		return this;
 	} 
-	//public boolean isAlertload() {
-		//return alert.isDisplayed();
-	//}
+	public boolean isAlertload() {
+		return alert.isDisplayed();
+	}
 	
 
 }

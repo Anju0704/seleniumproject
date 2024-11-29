@@ -16,21 +16,30 @@ public class SearchSubcategory {
 	@FindBy(xpath="//select[@class='form-control selectpicker']")WebElement category;
 	@FindBy(xpath="//input[@placeholder='Sub Category']")WebElement subcategory;
 	@FindBy(xpath="//button[@class='btn btn-danger btn-fix']")WebElement search;
-	public void clicksearchbutton() {
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td[1]")WebElement searchresult;
+	public SearchSubcategory clicksearchbutton() {
 		searchbutton.click();
+		return this;
 	}
-	public void clickcategorybutton()
+	public SearchSubcategory clickcategorybutton()
 	{
 		category.click();
 		Select select=new Select(category);
 		  select.selectByValue("180");
+		return this;
 	}
-	public void entersubcategoryfield(String subcategoryfield) {
+	public SearchSubcategory entersubcategoryfield(String subcategoryfield) {
 		subcategory.sendKeys(subcategoryfield);
+		return this;
 	}
-	public void clicksearchfield()
+	public SearchSubcategory clicksearchfield()
 	{
 		search.click();
+		return this;
 	} 
+	public boolean isResultload()
+	{
+		return searchresult.isDisplayed();
+	}
 
 }

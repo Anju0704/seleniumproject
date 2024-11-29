@@ -31,8 +31,8 @@ public	 WebDriver driver;
 	}
 	public Homepage clickSigninButton()
 	{
-		//WaitUtility wait=new WaitUtility();
-		//wait.waitForVisibilityOfElementLocated(driver, signin);
+		WaitUtility wait=new WaitUtility();
+		wait.waitForVisibilityOfElementLocated(driver, signin);
 		signin.click();
 		return new Homepage(driver);
 	}

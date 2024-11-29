@@ -11,24 +11,25 @@ public class Managenewsnew {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="/html/body/div/div[1]/section/div/div/div[9]/div/a")WebElement managenews;
+	
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")WebElement newbutton;
 	@FindBy(xpath="//textarea[@name='news']")WebElement news;
 	@FindBy(xpath="//button[@type='submit']")WebElement save;
 	@FindBy(xpath="//i[@class='icon fas fa-check']")WebElement alert;
-	public void clickmanagenewsbutton() {
-		managenews.click();
-	}
-	public void clicknewbutton()
+	
+	public  Managenewsnew clicknewbutton()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void enternewsField(String newsfield) {
+	public  Managenewsnew enternewsField(String newsfield) {
 		news.sendKeys(newsfield);
+		return this;
 	}
-	public void clicksavebutton()
+	public  Managenewsnew clicksavebutton()
 	{
 		save.click();
+		return this;
 	} 
 	public boolean isAlertload() {
 		return alert.isDisplayed();

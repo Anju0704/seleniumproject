@@ -30,30 +30,25 @@ public class LoginPageTest extends Base{
 	  }
 	
   @Test(dataProvider = "credentials")
-  @Parameters({"username","password"})
+  
   public void verifyuserisabletologinvalidcredentials(String username,String password) throws IOException {
-	  
-	 // String username=ExcelUtilities.getStringName(1, 0, "loginpage");
-	 // String password=ExcelUtilities.getStringName(1, 1, "loginpage");
-	  
 	  Loginpage login=new Loginpage(driver);
 	  login.enterUsernameField(username);
 	  login.enterpasswordField(password);
 	  login.clickSigninButton();
 	  boolean isdashboardloaded=login.isDashboardload();
-	  
-	    assertTrue(isdashboardloaded,Constant.ERRORMSG);
+	   assertTrue(isdashboardloaded,Constant.ERRORMSG);
   }
   
 	   @Test
 	  @Parameters({"username","password"})
-	  public void verifyuserisabletologininvalidusername() {
+	  public void verifyuserisabletologininvalidusername(String username,String password) {
 	  	  Loginpage login=new Loginpage(driver);
-	  	  login.enterUsernameField("admin11");
-	  	  login.enterpasswordField("admin");
+	  	  login.enterUsernameField(username);
+	  	  login.enterpasswordField(password);
 	  	  login.clickSigninButton();
 	  	boolean isAlertloaded=login.isAlertloaded();
-		  assertTrue(isAlertloaded,"User not able to login successfully");
+		  assertTrue(isAlertloaded,Constant.ERRORMSG2);
 	    }
   
 	  	  @Test  (groups = {"smoke"})
@@ -63,7 +58,7 @@ public class LoginPageTest extends Base{
 	  		  login.enterpasswordField("admin11");
 	  		  login.clickSigninButton();
 	  		boolean isAlertloaded=login.isAlertloaded();
-			  assertTrue(isAlertloaded,"User not able to login successfully");
+			  assertTrue(isAlertloaded,Constant.ERRORMSG2);
 	  		   
 	  	  }
   
@@ -74,7 +69,7 @@ public class LoginPageTest extends Base{
 		  		  login.enterpasswordField("admin@");
 		  		  login.clickSigninButton();
 		  		boolean isAlertloaded=login.isAlertloaded();
-				  assertTrue(isAlertloaded,"User not able to login successfully");
+				  assertTrue(isAlertloaded,Constant.ERRORMSG2);
 		  		
 	  		
 	

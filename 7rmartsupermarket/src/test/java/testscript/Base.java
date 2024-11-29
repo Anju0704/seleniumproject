@@ -53,7 +53,7 @@ public class Base {
 	  }
   
 	  
-	  // driver=new ChromeDriver();
+	  
   
   
   driver.get(properties.getProperty("url"));
