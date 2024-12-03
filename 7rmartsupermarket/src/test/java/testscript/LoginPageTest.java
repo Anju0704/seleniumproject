@@ -26,8 +26,7 @@ public class LoginPageTest extends Base{
 		  input[1][0]="admin@123";
 		  input[1][1]="admin123";
 		  return input;
-		  
-	  }
+		   }
 	
   @Test(dataProvider = "credentials")
   
@@ -70,8 +69,5 @@ public class LoginPageTest extends Base{
 		  		  login.clickSigninButton();
 		  		boolean isAlertloaded=login.isAlertloaded();
 				  assertTrue(isAlertloaded,Constant.ERRORMSG2);
-		  		
-	  		
-	
-  } 
+		  		} 
 }

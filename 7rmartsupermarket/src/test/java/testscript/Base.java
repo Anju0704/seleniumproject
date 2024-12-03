@@ -51,16 +51,10 @@ public class Base {
 	  } else {
 		  throw new Exception("invalid browser");
 	  }
-  
-	  
-	  
-  
-  
-  driver.get(properties.getProperty("url"));
-  driver.manage().window().maximize();
-  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-  
-	  }
+   driver.get(properties.getProperty("url"));
+   driver.manage().window().maximize();
+   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+  }
 
 
   @AfterMethod
